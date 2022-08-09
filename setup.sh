@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 
-echo "⚙ Setting up editors configuration..."
+export DOTFILES=~/dotfiles
 
-ln -sf ~/dotfiles/editors/vim/.vimrc ~/.vimrc
+echo "Initializing dotfiles configuration..."
+echo
+
+echo "Setting up editors configuration..."
+ln -sf $DOTFILES/editors/vim/.vimrc ~/.vimrc
 echo "vim symlinks created successfully!"
+echo
 
-echo "⚙ Setting up git configuration..."
-
-ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+echo "Setting up git configuration..."
+ln -sf $DOTFILES/git/.gitconfig ~/.gitconfig
 echo "git symlinks created successfully!"
+echo
+
+echo "Setting up terminal configuration..."
+ln -sf $DOTFILES/terminal/.aliases ~/.bash_aliases
+echo "alias symlinks created successfully!"
+echo
