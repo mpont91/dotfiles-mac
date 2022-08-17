@@ -16,6 +16,8 @@ echo "git symlinks created successfully!"
 echo
 
 echo "Setting up terminal configuration..."
+ln -sf $DOTFILES/terminal/.bashrc ~/.bashrc
+echo "bashrc symlink created successfully!"
 ln -sf $DOTFILES/terminal/.aliases ~/.bash_aliases
-echo "alias symlinks created successfully!"
+echo "alias symlink created successfully!"
 echo
