@@ -72,7 +72,6 @@ ZSH_THEME="eastwood"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aliases
-    git
 )
 
 source $ZSH/oh-my-zsh.sh
