@@ -20,4 +20,6 @@ ln -sf $DOTFILES/terminal/.bashrc ~/.bashrc
 echo "bashrc symlink created successfully!"
 ln -sf $DOTFILES/terminal/.aliases ~/.bash_aliases
 echo "alias symlink created successfully!"
+ln -sf $DOTFILES/terminal/.zshrc ~/.zshrc
+echo "zshrc symlink created successfully!"
 echo
