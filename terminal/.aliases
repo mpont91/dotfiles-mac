@@ -25,7 +25,17 @@ alias dc="docker-compose"
 alias k="kubectl"
 
 # Git
+alias g="git"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -v"
+alias gc!="git commit -v --amend"
+alias gd="git diff"
+alias gl="git pull"
+alias glg="git log --stat"
+alias gp="git push"
 alias gst="git status"
+
 alias amend="git add . && git commit --amend --no-edit"
 alias force="git push --force"
 alias nuke="git clean -df && git reset --hard"
