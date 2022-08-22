@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # CUSTOMIZATION
+export DOTFILES=~/dotfiles
 
 # ALIAS
 source ~/.aliases
@@ -113,4 +114,6 @@ source ~/.aliases
 
 # NVM
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+
+# OS
+source "${DOTFILES}/terminal/`uname`.zshrc"
