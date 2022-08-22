@@ -12,6 +12,7 @@ brew "tldr"
 brew "vim"
 brew "zsh"
 brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
 
 cask "bitwarden"
 cask "brackets"
