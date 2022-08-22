@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -35,6 +35,14 @@ defaults write NSGlobalDomain NSWindowResizeTime 0.001
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
+
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Set default keyboard repeat rate
+defaults delete NSGlobalDomain KeyRepeat
+defaults delete NSGlobalDomain InitialKeyRepeat
 
 ###############################################################################
 # Screen                                                                      #
