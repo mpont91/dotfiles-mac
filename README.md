@@ -2,11 +2,53 @@
 This repository serves as my way to help me setup and maintain my PC
 
 ## Installation
-### Ubuntu
-Run `os/ubuntu/packages.sh` for installing the default software
+Clone this repository to your home directory with the default folder name: `dotfiles`
 
-### Mac
-Run brewfile for installing the default software
+```shell
+git clone git@github.com:mpont91/dotfiles.git
+```
+
+Move to the directory:
+```shell
+cd dotfiles
+```
+
+Depending on your operating system follow the instructions:
+
+### Linux:
+1. Install the default software running packages script
+
+```shell
+./os/linux/packages.sh
+```
+
+### MacOS:
+1. Run mac defaults configuration
+```shell
+./os/macos/defaults.sh
+```
+
+2. Install homebrew with script
+
+```shell
+./os/macos/homebrew.sh
+```
+
+3. Run brewfile to install the default software
+
+```shell
+brew bundle --file=os/mac/brew/brewfile
+```
+
+4. Initialize phpbrew package
+```shell
+./os/macos/phpbrew.sh
+```
+
 
 ## Configuration
-Run `setup.sh` for configuring files. Usually are symlinks. This configuration is not OS dependant.
+Run setup script for configuring dotfiles. Usually are symlinks. This configuration is not OS dependant.
+
+```shell
+./setup.sh
+```
