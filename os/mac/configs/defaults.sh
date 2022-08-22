@@ -37,6 +37,14 @@ defaults write NSGlobalDomain NSWindowResizeTime 0.001
 sudo pmset -a hibernatemode 0
 
 ###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Set default keyboard repeat rate
+defaults delete NSGlobalDomain KeyRepeat
+defaults delete NSGlobalDomain InitialKeyRepeat
+
+###############################################################################
 # Screen                                                                      #
 ###############################################################################
 
