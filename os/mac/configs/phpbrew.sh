@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.nvm
+phpbrew init

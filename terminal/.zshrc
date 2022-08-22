@@ -72,6 +72,7 @@ ZSH_THEME="eastwood"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aliases
+    git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,4 +103,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# CUSTOMIZATION
+
+# ALIAS
 source ~/.aliases
+
+# PHPBREW
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
