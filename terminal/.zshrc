@@ -116,9 +116,6 @@ export DOTFILES=~/dotfiles
 # ALIAS
 source ~/.aliases
 
-# PHPBREW
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
 # NVM
 export NVM_DIR=~/.nvm
 
