@@ -40,12 +40,6 @@ Depending on your operating system follow the instructions:
 brew bundle --file=os/mac/brew/brewfile
 ```
 
-4. Initialize phpbrew package
-```shell
-./os/macos/phpbrew.sh
-```
-
-
 ## Configuration
 Run setup script for configuring dotfiles. Usually are symlinks. This configuration is not OS dependant.
 
