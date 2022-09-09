@@ -17,6 +17,8 @@ brew "zsh"
 brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
 
+cask "android-sdk"
+cask "android-studio"
 cask "bitwarden"
 cask "brackets"
 cask "brave-browser"
