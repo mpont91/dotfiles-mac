@@ -2,13 +2,13 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "9fffe077f1a5a722ed5bd26a87ed622e8cb64e0c"
+        "revision": "c92add2213682d16ea48268fbb0e61f2d1f27f19"
       },
       "homebrew/cask": {
-        "revision": "d23ee1bb09d5795c0df3f9e54a01a218a2efd8c9"
+        "revision": "447a8a26b45ec5370bf4dacf1327de7ea0ba2646"
       },
       "homebrew/core": {
-        "revision": "489a625f205ffae9c35b91860a3dd7fb6e964400"
+        "revision": "d1269afe2e2245735f0af390081749868ca519b2"
       },
       "shivammathur/php": {
         "revision": "43e1a945bbaa9d21c80a99a6432e0121881b90f5"
@@ -764,7 +764,7 @@
         }
       },
       "jetbrains-toolbox": {
-        "version": "1.25,1.25.12627",
+        "version": "1.25,1.25.12999",
         "options": {
           "full_name": "jetbrains-toolbox"
         }
@@ -846,15 +846,21 @@
         "options": {
           "full_name": "android-studio"
         }
+      },
+      "gimp": {
+        "version": "2.10.32",
+        "options": {
+          "full_name": "gimp"
+        }
       }
     }
   },
   "system": {
     "macos": {
       "monterey": {
-        "HOMEBREW_VERSION": "3.6.0",
+        "HOMEBREW_VERSION": "3.6.1",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "489a625f205ffae9c35b91860a3dd7fb6e964400",
+        "Homebrew/homebrew-core": "d1269afe2e2245735f0af390081749868ca519b2",
         "CLT": "13.4.0.0.1.1651278267",
         "Xcode": "13.4",
         "macOS": "12.4"
