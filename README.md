@@ -5,7 +5,7 @@ This repository serves as my way to help me setup and maintain my PC
 Clone this repository to your home directory with the default folder name: `.dotfiles`
 
 ```shell
-git clone git@github.com:mpont91/dotfiles.git .dotfiles
+git clone https://github.com/mpont91/dotfiles.git .dotfiles
 ```
 
 Move to the directory:
@@ -30,4 +30,20 @@ Linux commands:
 > make linux-packages  // Install all packages
 
 Non OS dependant commands:
+> make ohmyzsh  // Install ohmyzsh
 > make setup  // Add symlinks to apply all configuration
+
+
+## Example setting up a new mac
+
+> make mac-defaults
+> 
+> make setup
+> 
+> make ohmyzsh
+> 
+> make mac-homebrew
+> 
+> make mac-brew-bundle
+
+And ready to use :D

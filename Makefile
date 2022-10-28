@@ -12,6 +12,7 @@ help:
 	@echo "> make linux-packages  // Install all packages"
 	@echo
 	@echo Non OS dependant commands:
+	@echo "> make ohmyzsh  // Install ohmyzsh"
 	@echo "> make setup  // Add symlinks to apply all configuration"
 
 .PHONY: mac-homebrew
@@ -33,6 +34,10 @@ mac-brew-dump:
 .PHONY: linux-packages
 linux-packages:
 	./os/linux/packages.sh
+
+.PHONY: ohmyzsh
+ohmyzsh:
+	./packages/ohmyzsh.sh
 
 .PHONY: setup
 setup:
