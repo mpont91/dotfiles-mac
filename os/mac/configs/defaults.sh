@@ -4,11 +4,15 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
 # Play user interface sound effects: false
 defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
-
-# Show scrollbar when scrolling
-defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
 # Disable the over-the-top focus ring animation
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
@@ -27,10 +31,10 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Disable Resume system-wide
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
-# Sped up dialogue boxes https://robservatory.com/speed-up-your-mac-via-hidden-prefs/
+# Speed up dialogue boxes https://robservatory.com/speed-up-your-mac-via-hidden-prefs/
 defaults write NSGlobalDomain NSWindowResizeTime 0.001
 
 # Disable hibernation (speeds up entering sleep mode)
@@ -40,9 +44,17 @@ sudo pmset -a hibernatemode 0
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
-# Set default keyboard repeat rate
-defaults delete NSGlobalDomain KeyRepeat
-defaults delete NSGlobalDomain InitialKeyRepeat
+# Set language and text formats
+defaults write NSGlobalDomain AppleLanguages -array "en"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+# Set the timezone; see `systemsetup -listtimezones` for other values
+systemsetup -settimezone "Europe/Madrid" > /dev/null
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Screen                                                                      #
@@ -114,6 +126,11 @@ defaults write com.apple.dock expose-animation-duration -float 0
 
 # Don’t group windows by application in Mission Control
 defaults write com.apple.dock expose-group-by-app -bool false
+
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array ""
 
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true

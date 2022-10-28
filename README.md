@@ -2,47 +2,32 @@
 This repository serves as my way to help me setup and maintain my PC
 
 ## Installation
-Clone this repository to your home directory with the default folder name: `dotfiles`
+Clone this repository to your home directory with the default folder name: `.dotfiles`
 
 ```shell
-git clone git@github.com:mpont91/dotfiles.git
+git clone git@github.com:mpont91/dotfiles.git .dotfiles
 ```
 
 Move to the directory:
 ```shell
-cd dotfiles
+cd .dotfiles
 ```
 
-Depending on your operating system follow the instructions:
+Depending on your operating system follow the instructions with `make help`:
 
-### Linux:
-1. Install the default software running packages script
+Usage commands:
 
-```shell
-./os/linux/packages.sh
-```
+Macos commands:
+> make mac-homebrew  // Install homebrew
 
-### MacOS:
-1. Run mac defaults configuration
-```shell
-./os/macos/defaults.sh
-```
+> make mac-defaults  // Sets default configuration
 
-2. Install homebrew with script
+> make mac-brew-bundle  // Install all applications from Brewfile
 
-```shell
-./os/macos/homebrew.sh
-```
+> make mac-brew-dump  // Dump list of all applications overwriting Brewfile
 
-3. Run brewfile to install the default software
+Linux commands:
+> make linux-packages  // Install all packages
 
-```shell
-brew bundle --file=os/mac/brew/brewfile
-```
-
-## Configuration
-Run setup script for configuring dotfiles. Usually are symlinks. This configuration is not OS dependant.
-
-```shell
-./setup.sh
-```
+Non OS dependant commands:
+> make setup  // Add symlinks to apply all configuration

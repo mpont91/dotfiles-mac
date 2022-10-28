@@ -1,17 +1,9 @@
 #!/bin/bash
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# Shortcuts
 alias c="clear"
-
-# Directories
 alias ..="cd .."
 alias ...="cd ../.."
 
@@ -44,4 +36,4 @@ alias nuke="git clean -df && git reset --hard"
 alias undo='git reset --soft HEAD~1'
 alias stash="git stash -u"
 alias pop="git stash pop"
-alias wip="commit wip"
+alias wip="git add . && git commit -m wip"
