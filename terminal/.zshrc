@@ -118,8 +118,5 @@ source ~/.exports
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# NVM
-export NVM_DIR=~/.nvm
-
 # OS
 source "${DOTFILES}/terminal/`uname`.zshrc"
