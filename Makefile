@@ -17,7 +17,7 @@ help:
 
 .PHONY: mac-homebrew
 mac-homebrew:
-	./os/mac/configs/homebrew.sh
+	./os/mac/brew/homebrew.sh
 
 .PHONY: mac-defaults
 mac-defaults:
