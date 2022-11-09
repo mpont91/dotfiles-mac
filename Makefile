@@ -3,7 +3,7 @@ help:
 	@echo "Usage commands:"
 	@echo
 	@echo Macos commands:
-	@echo "> make mac-homebrew  // Install homebrew"
+	@echo "> make mac-install-homebrew  // Install homebrew"
 	@echo "> make mac-defaults  // Sets default configuration"
 	@echo "> make mac-brew-bundle  // Install all applications from Brewfile"
 	@echo "> make mac-brew-dump  // Dump list of all applications overwriting Brewfile"
@@ -12,11 +12,11 @@ help:
 	@echo "> make linux-packages  // Install all packages"
 	@echo
 	@echo Non OS dependant commands:
-	@echo "> make ohmyzsh  // Install ohmyzsh"
-	@echo "> make setup  // Add symlinks to apply all configuration"
+	@echo "> make install-ohmyzsh  // Install ohmyzsh"
+	@echo "> make symlinks  // Add symlinks to apply all configuration"
 
-.PHONY: mac-homebrew
-mac-homebrew:
+.PHONY: mac-install-homebrew
+mac-install-homebrew:
 	./os/mac/brew/homebrew.sh
 
 .PHONY: mac-defaults
@@ -35,10 +35,10 @@ mac-brew-dump:
 linux-packages:
 	./os/linux/packages.sh
 
-.PHONY: ohmyzsh
-ohmyzsh:
+.PHONY: install-ohmyzsh
+install-ohmyzsh:
 	./packages/ohmyzsh.sh
 
-.PHONY: setup
-setup:
-	./setup.sh
+.PHONY: symlinks
+symlinks:
+	./symlinks.sh

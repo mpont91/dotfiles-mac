@@ -20,7 +20,7 @@ Usage commands:
 Macos commands:
 
 ```
-make mac-homebrew  // Install homebrew
+make mac-install-homebrew  // Install homebrew
 ```
 
 ```
@@ -42,10 +42,10 @@ make linux-packages  // Install all packages
 
 Non OS dependant commands:
 ```
-make ohmyzsh  // Install ohmyzsh
+make install-ohmyzsh  // Install ohmyzsh
 ```
 ```
-make setup  // Add symlinks to apply all configuration
+make symlinks  // Create symlinks to apply all configuration
 ```
 
 
@@ -54,19 +54,19 @@ make setup  // Add symlinks to apply all configuration
 First thing to do is install Homebrew
 
 ```
-make mac-homebrew
+make mac-install-homebrew
 ```
 
 Install ohmyzsh too
 
 ```
-make ohmyzsh
+make install-ohmyzsh
 ```
 
-Then setup all files configuration symlinks
+Create all configuration symlinks
 
 ```
-make setup
+make symlinks
 ```
 
 Apply mac defaults
