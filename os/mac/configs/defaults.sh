@@ -20,19 +20,12 @@ sudo nvram SystemAudioVolume=" "
 # Play user interface sound effects: false
 defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
+# Show scrollbars always
+defaults write -g AppleShowScrollBars -string "Always"
+defaults write -g NSWindowResizeTime -float 0.001
+
 # Disable the over-the-top focus ring animation
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
-
-# Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
-# Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -47,7 +40,7 @@ defaults write NSGlobalDomain NSWindowResizeTime 0.001
 sudo pmset -a hibernatemode 0
 
 ###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+# Input                                                                       #
 ###############################################################################
 
 # Set language and text formats
@@ -59,8 +52,28 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Set the timezone; see `systemsetup -listtimezones` for other values
 systemsetup -settimezone "Europe/Madrid" > /dev/null
 
+###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 ###############################################################################
 # Screen                                                                      #
@@ -115,8 +128,23 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Show Sidebar, but remove the Tags section.
+defaults write com.apple.finder ShowSidebar -bool true
+defaults write com.apple.finder ShowRecentTags -bool false
+
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# Dock                                                                        #
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -134,31 +162,17 @@ defaults write com.apple.dock minimize-to-application -bool true
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
-
 # Show only open applications in the Dock
 defaults write com.apple.dock static-only -bool true
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
-# Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0
-
 # Don’t group windows by application in Mission Control
 defaults write com.apple.dock expose-group-by-app -bool false
 
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
-
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
@@ -175,6 +189,24 @@ defaults write com.apple.dock showhidden -bool true
 # Disable recent applications
 defaults write com.apple.dock show-recents -bool false
 
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array
+
+###############################################################################
+# Mission Control                                                             #
+###############################################################################
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
@@ -182,8 +214,10 @@ defaults write com.apple.dock show-recents -bool false
 # Show all processes in Activity Monitor
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
+
 for app in "Activity Monitor" \
   "Dock" \
-	"Finder"; do
+	"Finder" \
+	"SystemUIServer"; do
 	killall "${app}" &> /dev/null
 done
