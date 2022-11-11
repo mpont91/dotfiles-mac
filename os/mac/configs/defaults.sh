@@ -15,10 +15,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
-# Play user interface sound effects: false
-defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+sudo nvram StartupMute=%01
 
 # Show scrollbars always
 defaults write -g AppleShowScrollBars -string "Always"
