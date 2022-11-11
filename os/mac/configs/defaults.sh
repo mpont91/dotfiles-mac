@@ -23,6 +23,7 @@ defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 # Show scrollbars always
 defaults write -g AppleShowScrollBars -string "Always"
 defaults write -g NSWindowResizeTime -float 0.001
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Disable the over-the-top focus ring animation
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
@@ -172,19 +173,6 @@ defaults write com.apple.dock autohide-delay -float 0
 
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
-
-###############################################################################
-# Mission Control                                                             #
-###############################################################################
-
-# Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0
-
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
 
 ###############################################################################
 # Activity Monitor                                                            #
