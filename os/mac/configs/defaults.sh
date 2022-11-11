@@ -17,20 +17,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Disable the sound effects on boot
 sudo nvram StartupMute=%01
 
-# Show scrollbars always
-defaults write -g AppleShowScrollBars -string "Always"
-defaults write -g NSWindowResizeTime -float 0.001
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
-# Disable the over-the-top focus ring animation
-defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
-
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# Disable Resume system-wide
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
-
 # Speed up dialogue boxes https://robservatory.com/speed-up-your-mac-via-hidden-prefs/
 defaults write NSGlobalDomain NSWindowResizeTime 0.001
 
