@@ -41,19 +41,6 @@ defaults write NSGlobalDomain NSWindowResizeTime 0.001
 sudo pmset -a hibernatemode 0
 
 ###############################################################################
-# Input                                                                       #
-###############################################################################
-
-# Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
-
-# Set the timezone; see `systemsetup -listtimezones` for other values
-systemsetup -settimezone "Europe/Madrid" > /dev/null
-
-###############################################################################
 # Keyboard                                                                    #
 ###############################################################################
 
