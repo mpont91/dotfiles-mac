@@ -174,17 +174,7 @@ defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
-###############################################################################
-# Activity Monitor                                                            #
-###############################################################################
-
-# Show all processes in Activity Monitor
-defaults write com.apple.ActivityMonitor ShowCategory -int 0
-
-
-for app in "Activity Monitor" \
-  "Dock" \
-	"Finder" \
-	"SystemUIServer"; do
+for app in "Dock" \
+	"Finder"; do
 	killall "${app}" &> /dev/null
 done
