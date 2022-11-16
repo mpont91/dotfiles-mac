@@ -9,7 +9,8 @@ help:
 	@echo "> make mac-brew-dump  // Dump list of all applications overwriting Brewfile"
 	@echo
 	@echo Linux commands:
-	@echo "> make linux-packages  // Install all packages"
+	@echo "> make linux-install-packages  // Install all packages"
+	@echo "> make linux-install-docker  // Install docker"
 	@echo
 	@echo Non OS dependant commands:
 	@echo "> make install-ohmyzsh  // Install ohmyzsh"
@@ -31,9 +32,13 @@ mac-brew-bundle:
 mac-brew-dump:
 	brew bundle dump --file=os/mac/brew/brewfile --force
 
-.PHONY: linux-packages
-linux-packages:
+.PHONY: linux-install-packages
+linux-install-packages:
 	./os/linux/packages.sh
+
+.PHONY: linux-install-docker
+linux-install-docker:
+	./os/linux/docker.sh
 
 .PHONY: install-ohmyzsh
 install-ohmyzsh:

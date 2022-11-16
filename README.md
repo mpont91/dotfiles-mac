@@ -82,3 +82,29 @@ make mac-brew-bundle
 ```
 
 And ready to use :D
+
+## Setting up a new linux
+
+First install linux packages
+
+```
+make linux-packages
+```
+
+Install ohmyzsh
+
+```
+make install-ohmyzsh
+```
+
+Install docker
+
+```
+make install-linux-docker
+```
+
+Create all configuration symlinks
+
+```
+make symlinks
+```
