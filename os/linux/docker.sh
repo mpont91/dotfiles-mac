@@ -31,3 +31,6 @@ sleep 5  # Waits 5 seconds.
 
 # Verify that the Docker Engine installation is successful by running the hello-world image:
 sudo docker run hello-world
+
+# Add current user to docker group. Use docker without sudo
+sudo gpasswd -a $USER docker
