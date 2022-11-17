@@ -85,10 +85,16 @@ And ready to use :D
 
 ## Setting up a new linux
 
-First install linux packages
+First of all you will need `make` command
 
 ```
-make linux-packages
+sudo apt install make
+```
+
+Install linux packages
+
+```
+make linux-install-packages
 ```
 
 Install ohmyzsh
@@ -100,7 +106,7 @@ make install-ohmyzsh
 Install docker
 
 ```
-make install-linux-docker
+make linux-install-docker
 ```
 
 Create all configuration symlinks
