@@ -112,7 +112,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Load the shell dotfiles, and then some:
 source ~/.aliases
-source ~/.exports
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8

@@ -18,8 +18,6 @@ echo
 echo "Setting up terminal configuration..."
 ln -sf $DOTFILES/terminal/.aliases ~/.aliases
 echo "alias symlink created successfully!"
-ln -sf $DOTFILES/terminal/.exports ~/.exports
-echo "exports symlink created successfully!"
 ln -sf $DOTFILES/terminal/.zshrc ~/.zshrc
 echo "zshrc symlink created successfully!"
 echo
