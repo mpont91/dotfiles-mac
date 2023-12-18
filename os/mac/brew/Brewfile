@@ -26,7 +26,8 @@ brew "libheif"
 brew "imagemagick"
 brew "kubernetes-cli"
 brew "llvm"
-brew "node"
+brew "node", link: false
+brew "node@20", link: true
 brew "openjdk"
 brew "protobuf"
 brew "python@3.10"
