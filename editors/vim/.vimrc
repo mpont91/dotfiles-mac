@@ -14,9 +14,14 @@ set autoread                    "Reload files changed outside vim
 set ruler                       "Add the current line and column"
 
 
-
 " ================ Scrolling ========================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set scrolloff=8                 "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
+
+" ================ Searching ========================
+
+set incsearch                   "Show results as you type
+set hlsearch                    "Highlight all matches

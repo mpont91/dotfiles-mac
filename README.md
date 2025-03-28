@@ -1,116 +1,58 @@
-# Dotfiles
-This repository serves as my way to help me setup and maintain my PC
+# ⚙️ Dotfiles
 
-## Installation
-Clone this repository to your home directory with the default folder name: `.dotfiles`
+This repository contains my personal dotfiles to set up and maintain a clean development environment on macOS.
 
-```shell
-git clone https://github.com/mpont91/dotfiles.git .dotfiles
+It includes configuration for:
+
+- Terminal (Zsh + Oh My Zsh)
+- Git
+- Vim
+- Homebrew packages
+- macOS system defaults
+- Editor and tool preferences
+
+---
+
+## 🚀 Installation
+
+First, clone this repository into your home directory with the default name `.dotfiles`:
+
+```bash
+git clone git@github.com:mpont91/dotfiles.git ~/.dotfiles
 ```
 
-Move to the directory:
-```shell
-cd .dotfiles
+Then run the setup using the provided Makefile commands:
+
+## 🔧 Setup Steps
+
+### 1. Apply macOS system defaults 
+
+This configures sensible preferences for the system, Finder, Dock, keyboard, etc.
+
+```bash
+make defaults
 ```
 
-Depending on your operating system follow the instructions with `make help`:
+### 2. Install Homebrew and packages
 
-Usage commands:
+Installs Homebrew (if not already installed) and all packages listed in Brewfile.
 
-Macos commands:
-
-```
-make mac-install-homebrew  // Install homebrew
+```bash
+make brew
 ```
 
-```
-make mac-defaults  // Sets default configuration
+### 3. Install Oh My Zsh
+
+Installs Oh My Zsh (only if not already present) without modifying .zshrc.
+
+```bash
+make ohmyzsh
 ```
 
-```
-make mac-brew-bundle  // Install all applications from Brewfile
-```
+### 4. Create symlinks
+   
+Links your configuration files (.zshrc, .aliases, .vimrc, .gitconfig, etc.) to your home directory.
 
-```
-make mac-brew-dump  // Dump list of all applications overwriting Brewfile
-```
-
-Linux commands:
-```
-make linux-packages  // Install all packages
-```
-
-Non OS dependant commands:
-```
-make install-ohmyzsh  // Install ohmyzsh
-```
-```
-make symlinks  // Create symlinks to apply all configuration
-```
-
-
-## Setting up a new mac
-
-First thing to do is install Homebrew
-
-```
-make mac-install-homebrew
-```
-
-Install ohmyzsh too
-
-```
-make install-ohmyzsh
-```
-
-Create all configuration symlinks
-
-```
-make symlinks
-```
-
-Apply mac defaults
-
-```
-make mac-defaults
-```
-
-Install all other software
-
-```
-make mac-brew-bundle
-```
-
-And ready to use :D
-
-## Setting up a new linux
-
-First of all you will need `make` command
-
-```
-sudo apt install make
-```
-
-Install linux packages
-
-```
-make linux-install-packages
-```
-
-Install ohmyzsh
-
-```
-make install-ohmyzsh
-```
-
-Install docker
-
-```
-make linux-install-docker
-```
-
-Create all configuration symlinks
-
-```
-make symlinks
+```bash
+make link
 ```

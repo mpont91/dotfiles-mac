@@ -1,41 +1,72 @@
 #!/bin/bash
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# ─── Basic Navigation ────────────────────────────────────────────────────────
 alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias i='phpstorm'
 
-# Laravel
-alias pa='php artisan'
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-alias sa='sail artisan'
+# ─── Listing Files ───────────────────────────────────────────────────────────
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
 
-# Docker
-alias dc='docker-compose'
+# ─── Docker ──────────────────────────────────────────────────────────────────
+alias dc='docker compose'  # Use 'docker compose' (modern syntax)
 
-# Kubernetes
-alias k='kubectl'
-
-# Git
+# ─── Git Shortcuts ───────────────────────────────────────────────────────────
 alias g='git'
 alias ga='git add'
 alias gaa='git add --all'
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
+alias gcm='git commit -m'
+alias gco='git checkout'
 alias gd='git diff'
 alias gl='git pull'
-alias glg='git log --stat'
 alias gp='git push'
 alias gst='git status'
+alias glg='git log --stat'
 
-alias amend='git add . && git commit --amend --no-edit'
-alias force='git push --force'
-alias nuke='git clean -df && git reset --hard'
-alias undo='git reset --soft HEAD~1'
+# ─── Git Workflows ───────────────────────────────────────────────────────────
+
+# Amend last commit with current staged changes
+amend() {
+  git add . && git commit --amend --no-edit
+}
+
+# Force push the current branch
+force() {
+  git push --force
+}
+
+# Clean untracked files and reset all changes
+nuke() {
+  echo "This will discard all local changes and untracked files."
+  read -p "Are you sure? [y/N]: " confirm
+  if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
+    git clean -df && git reset --hard
+  else
+    echo "Cancelled."
+  fi
+}
+
+# Undo last commit but keep changes staged
+undo() {
+  git reset --soft HEAD~1
+}
+
+# Quick stash and pop
 alias stash='git stash -u'
 alias pop='git stash pop'
+
+# Work in progress commit
 alias wip='git add . && git commit -m wip'
-alias deploy-test='gco development; git pull; git merge -; git push; git checkout -; git checkout preprod; git pull; git merge -; git push; git checkout -'
+
+# ─── Git Deployment (Development & Preprod) ──────────────────────────────────
+
+deploy-test() {
+  echo "Deploying to development and preprod..."
+  gco development && git pull && git merge - && git push
+  gco - && gco preprod && git pull && git merge - && git push
+  gco -
+}

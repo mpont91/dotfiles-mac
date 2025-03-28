@@ -1,6 +1,6 @@
 [user]
-	name = Marc Casadevall
-	email = mcasadevall@stxgroup.com
+	name = Marc Pont
+	email = mpont91@gmail.com
 
 [core]
 	editor = vim
@@ -13,10 +13,10 @@
 	prune = true
 
 [push]
-	default = simple
+	autoSetupRemote = true
 
 [init]
 	defaultBranch = master
 
 [pull]
-	rebase = false
+	rebase = true
