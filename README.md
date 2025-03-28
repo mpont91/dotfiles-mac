@@ -49,7 +49,15 @@ Installs Oh My Zsh (only if not already present) without modifying .zshrc.
 make ohmyzsh
 ```
 
-### 4. Create symlinks
+### 4. Install VS Code extensions
+
+Installs a minimal list of essential VS Code extensions (ESLint, Prettier, Vue, React, Astro, etc.).
+
+```bash
+make vscode
+```
+
+### 5. Create symlinks
    
 Links your configuration files (.zshrc, .aliases, .vimrc, .gitconfig, etc.) to your home directory.
 
