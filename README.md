@@ -71,13 +71,9 @@ make link
 
 2. Disable Spotlight shortcut
 
-   **(This shortcut is disabled automatically by the defaults script, but it still requires a restart or logout to take effect)**
+   Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight
 
-   To double-check or disable it manually:
-
-   - Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight
-
-   - Disable default shortcut for "Show Spotlight search" (⌘ + Space)
+   Disable default shortcut for "Show Spotlight search" (⌘ + Space)
 
 3. Create your own global app shortcuts
 

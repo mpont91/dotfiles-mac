@@ -21,17 +21,9 @@ sudo nvram StartupMute=%01
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
 
-# Disable spotlight. You may need to log out or restart for this to take effect.
-# Enable raycast shortcut later
-sudo defaults write /Library/Preferences/com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 64 '{enabled = 0;}'
-
-
 ###############################################################################
-# Keyboard & mouse                                                            #
+# Keyboard                                                         			  #
 ###############################################################################
-
-# Disable mouse acceleration
-defaults write .GlobalPreferences com.apple.mouse.scaling -1
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
