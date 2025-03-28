@@ -11,6 +11,7 @@
     "**/.idea": true
   },
   "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
   "search.exclude": {
     "**/.idea": true
   },
