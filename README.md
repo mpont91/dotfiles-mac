@@ -11,8 +11,6 @@ It includes configuration for:
 - macOS system defaults
 - Editor and tool preferences
 
----
-
 ## 🚀 Installation
 
 First, clone this repository into your home directory with the default name `.dotfiles`:
@@ -25,7 +23,7 @@ Then run the setup using the provided Makefile commands:
 
 ## 🔧 Setup Steps
 
-### 1. Apply macOS system defaults 
+### 1. Apply macOS system defaults
 
 This configures sensible preferences for the system, Finder, Dock, keyboard, etc.
 
@@ -58,9 +56,49 @@ make vscode
 ```
 
 ### 5. Create symlinks
-   
+
 Links your configuration files (.zshrc, .aliases, .vimrc, .gitconfig, etc.) to your home directory.
 
 ```bash
 make link
 ```
+
+### 6. Raycast (manual step)
+
+1. Open Raycast > Settings > General
+
+   Set ⌘ + Space as the hotkey for opening Raycast.
+
+2. Disable Spotlight shortcut
+
+   **(This shortcut is disabled automatically by the defaults script, but it still requires a restart or logout to take effect)**
+
+   To double-check or disable it manually:
+
+   - Go to System Settings > Keyboard > Keyboard Shortcuts > Spotlight
+
+   - Disable default shortcut for "Show Spotlight search" (⌘ + Space)
+
+3. Create your own global app shortcuts
+
+   Go to Raycast > Settings > Extensions > Application Search
+
+   Default shortcuts:
+
+   ^ + ⌥ + ⌘ + G → Brave
+
+   ^ + ⌥ + ⌘ + G → Discord
+
+   ^ + ⌥ + ⌘ + F → Finder
+
+   ^ + ⌥ + ⌘ + M → MS Teams
+
+   ^ + ⌥ + ⌘ + O → Outlook
+
+   ^ + ⌥ + ⌘ + I → Phpstorm
+
+   ^ + ⌥ + ⌘ + S → Spotify
+
+   ^ + ⌥ + ⌘ + T → Terminal
+
+   ^ + ⌥ + ⌘ + C → VS Code
