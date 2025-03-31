@@ -12,6 +12,8 @@
   },
   "files.trimTrailingWhitespace": true,
   "git.confirmSync": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
   "search.exclude": {
     "**/.idea": true
   },
