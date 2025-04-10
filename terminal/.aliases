@@ -11,7 +11,7 @@ alias la='ls -A'
 alias ll='ls -alF'
 
 # ─── Docker ──────────────────────────────────────────────────────────────────
-alias dc='docker compose'  # Use 'docker compose' (modern syntax)
+alias dc='docker compose'
 
 # ─── Git Shortcuts ───────────────────────────────────────────────────────────
 alias g='git'
@@ -27,6 +27,7 @@ alias gd='git diff'
 alias gl='git pull'
 alias gm='git merge'
 alias gp='git push'
+alias gru='git reset --'
 alias gst='git status'
 alias glg='git log --stat'
 
@@ -44,13 +45,7 @@ force() {
 
 # Clean untracked files and reset all changes
 nuke() {
-  echo "This will discard all local changes and untracked files."
-  read -p "Are you sure? [y/N]: " confirm
-  if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
     git clean -df && git reset --hard
-  else
-    echo "Cancelled."
-  fi
 }
 
 # Undo last commit but keep changes staged
