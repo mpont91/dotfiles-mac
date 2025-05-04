@@ -16,7 +16,7 @@ It includes configuration for:
 First, clone this repository into your home directory with the default name `.dotfiles`:
 
 ```bash
-git clone git@github.com:mpont91/dotfiles.git ~/.dotfiles
+git clone git@github.com:mpont91/dotfiles-mac.git ~/.dotfiles
 ```
 
 Then run the setup using the provided Makefile commands:
