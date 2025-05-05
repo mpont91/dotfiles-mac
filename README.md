@@ -1,4 +1,4 @@
-# ⚙️ Dotfiles
+# ⚙️ Dotfiles Mac
 
 This repository contains my personal dotfiles to set up and maintain a clean development environment on macOS.
 
